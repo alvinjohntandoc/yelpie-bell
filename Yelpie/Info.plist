@@ -20,6 +20,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Yelfie needs to access your location to find nearest establishments.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Yelfie needs to access your location to find nearest establishments.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Yelfie needs to access your location to find nearest establishments.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -62,11 +68,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>Yelfie needs to access your location to find nearest establishments.</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>Yelfie needs to access your location to find nearest establishments.</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Yelfie needs to access your location to find nearest establishments.</string>
+    <key>UIUserInterfaceStyle</key>
+    <string>Light</string>
 </dict>
 </plist>
