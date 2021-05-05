@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IM9-7X-Jyj">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Yelpie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Z4p-sb-idc">
+                                <rect key="frame" x="82" y="579" width="250" height="235"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Discover Celebrate Enjoy!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l91-3F-Unh">
+                                        <rect key="frame" x="20" y="0.0" width="210" height="87"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="87" id="F6F-Sn-pS7"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="197" id="f0I-eh-xmg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our job is to filling your tummy with delicious food and fast delivery so you will be yelpie!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kov-FM-FtS">
+                                        <rect key="frame" x="0.0" y="95" width="250" height="72"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="4DN-JO-89H"/>
+                                            <constraint firstAttribute="height" constant="72" id="53g-Be-DT5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c77-Cb-gzm" customClass="ATButton" customModule="Yelpie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="175" width="250" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="JEO-J2-Wsm"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="qFM-wq-I3j"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                        <state key="normal" title="Get Started">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getStartedAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rgn-of-BdF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="235" id="EEo-8p-Cc6"/>
+                                    <constraint firstAttribute="width" constant="250" id="RtF-eT-qTS"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQf-Qp-HjB" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="536"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="jumping"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Z4p-sb-idc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1X5-zc-1Wv"/>
+                            <constraint firstItem="Z4p-sb-idc" firstAttribute="top" secondItem="qQf-Qp-HjB" secondAttribute="bottom" constant="43" id="21e-rb-63o"/>
+                            <constraint firstItem="qQf-Qp-HjB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RoB-Vt-Ese"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Z4p-sb-idc" secondAttribute="bottom" constant="48" id="USc-3e-dMd"/>
+                            <constraint firstItem="qQf-Qp-HjB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="i4Z-mR-Vs0"/>
+                            <constraint firstItem="qQf-Qp-HjB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="o4T-HX-HSR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0Vy-Ke-aBH"/>
+                    <connections>
+                        <outlet property="loaderAnimationView" destination="qQf-Qp-HjB" id="03V-1v-25U"/>
+                        <outlet property="startButton" destination="c77-Cb-gzm" id="igM-7L-fMx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="692.75362318840587" y="116.51785714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="odD-Ca-DA6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IM9-7X-Jyj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WgH-Hj-DF7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ged-dj-RtW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4vd-Xe-Btk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-217.39130434782609" y="116.51785714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
