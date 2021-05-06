@@ -8,10 +8,6 @@
 import UIKit
 
 class DCategoryViewController: UIViewController {
-
-    enum Constants {
-        static let cellIdentifier = "ThumbnailCollectionViewCell"
-    }
     
     //MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
@@ -93,9 +89,11 @@ extension DCategoryViewController: UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell: ThumbnailCollectionViewCell = collectionView
-            .dequeueReusableCell(withReuseIdentifier: Constants.cellIdentifier,
-                                 for: indexPath) as! ThumbnailCollectionViewCell
+        guard let cell: ThumbnailCollectionViewCell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: ThumbnailCollectionViewCell.reuseIdentifier,
+                                 for: indexPath) as? ThumbnailCollectionViewCell else {
+            preconditionFailure("Can't dequeue cell")
+        }
         
         let thumbnail = thumbnailables[indexPath.row]
         

@@ -23,11 +23,11 @@ class DHeaderViewController: UIViewController {
         super.viewDidLoad()
 
         self.searchView.isUserInteractionEnabled = true
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tap))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(searchViewtapped))
         searchView.addGestureRecognizer(tapRecognizer)
     }
     
-    @objc func tap() {
+    @objc func searchViewtapped() {
         wantsToSearch?()
     }
     

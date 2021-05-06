@@ -37,10 +37,10 @@ class DCategoryViewPresenter {
     init(delegate: DCategoryViewPresenterDelegate) {
         self.delegate = delegate
 
-        handleTracker()
+        handleCoordinate()
     }
     
-    private func handleTracker() {
+    private func handleCoordinate() {
         locationService.coordinate = { [weak self] coordinate in
             guard let self = self else {
                 return

@@ -9,6 +9,10 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    enum Constants {
+        static let cancel = "Cancel"
+    }
+    
     //MARK: Outlets
     @IBOutlet weak var searchView: UIView! {
         didSet {
@@ -49,7 +53,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        searchTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         searchTextField.delegate = self
         presenter.startLocationTracking()
     }
@@ -81,9 +85,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell: ThumbnailCollectionViewCell = collectionView
-            .dequeueReusableCell(withReuseIdentifier: "ThumbnailCollectionViewCell",
-                                 for: indexPath) as! ThumbnailCollectionViewCell
+        guard let cell: ThumbnailCollectionViewCell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: ThumbnailCollectionViewCell.reuseIdentifier,
+                                 for: indexPath) as? ThumbnailCollectionViewCell else {
+            preconditionFailure("Can't dequeue cell")
+        }
         
         let thumbnail = thumbnailables[indexPath.row]
         
@@ -96,7 +102,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let thumbnailable = thumbnailables[indexPath.row]
         
-        let cell: SearchTableViewCell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell") as! SearchTableViewCell
+        guard let cell: SearchTableViewCell = tableView
+                .dequeueReusableCell(withIdentifier: SearchTableViewCell.reuseIdentifier)
+                as? SearchTableViewCell else {
+            preconditionFailure("Can't dequeue cell")
+        }
         
         cell.bind(thumbnailable)
         
@@ -127,7 +137,7 @@ extension SearchViewController: SearchViewPresenterDelegate {
     func presentSortOptions(options: [Sort]) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        for option in options {
+        options.forEach { option in
             let action = UIAlertAction(title: option.title, style: .default) { [weak self] alertAction in
                 guard let self = self else { return }
             
@@ -141,7 +151,7 @@ extension SearchViewController: SearchViewPresenterDelegate {
             alertController.addAction(action)
         }
         
-        let action = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let action = UIAlertAction(title: Constants.cancel, style: .cancel, handler: nil)
         alertController.addAction(action)
         
         navigationController?.present(alertController, animated: true, completion: nil)

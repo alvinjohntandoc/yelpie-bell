@@ -25,6 +25,7 @@
 		0DCCFE0F26414BD50003E73C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DCCFE0E26414BD50003E73C /* Assets.xcassets */; };
 		0DCCFE1D26414BD50003E73C /* YelpieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCFE1C26414BD50003E73C /* YelpieTests.swift */; };
 		0DCCFE2826414BD60003E73C /* YelpieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCFE2726414BD60003E73C /* YelpieUITests.swift */; };
+		0DD667B52643C8DB00491FC3 /* UITableViewCell+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD667B42643C8DB00491FC3 /* UITableViewCell+Identifier.swift */; };
 		0DFC5C60264150770071BB87 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DFC5C5F264150770071BB87 /* loader.json */; };
 		0DFC5C692641556A0071BB87 /* ATButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFC5C682641556A0071BB87 /* ATButton.swift */; };
 		0DFC5C72264156720071BB87 /* UIFont+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFC5C71264156720071BB87 /* UIFont+Custom.swift */; };
@@ -107,6 +108,7 @@
 		0DCCFE2326414BD50003E73C /* YelpieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YelpieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DCCFE2726414BD60003E73C /* YelpieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpieUITests.swift; sourceTree = "<group>"; };
 		0DCCFE2926414BD60003E73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DD667B42643C8DB00491FC3 /* UITableViewCell+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Identifier.swift"; sourceTree = "<group>"; };
 		0DFC5C5F264150770071BB87 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
 		0DFC5C682641556A0071BB87 /* ATButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATButton.swift; sourceTree = "<group>"; };
 		0DFC5C71264156720071BB87 /* UIFont+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Custom.swift"; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 		0DFC5C672641553B0071BB87 /* GlobalViews */ = {
 			isa = PBXGroup;
 			children = (
+				0DFC5CAE26416AEF0071BB87 /* AvatarButton.swift */,
 				0DFC5C682641556A0071BB87 /* ATButton.swift */,
 			);
 			path = GlobalViews;
@@ -358,6 +361,7 @@
 				0DFC5D412641DC810071BB87 /* UIView+Shadow.swift */,
 				0DFC5D462641DD580071BB87 /* Label+DropShadow.swift */,
 				0D0C049C26428FFB0004BAD8 /* String+Date.swift */,
+				0DD667B42643C8DB00491FC3 /* UITableViewCell+Identifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -376,7 +380,6 @@
 		0DFC5C8626415CE90071BB87 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				0DFC5CAD26416AD10071BB87 /* Views */,
 				0DCCFE0926414BD20003E73C /* MainViewController.swift */,
 				0DCCFE0B26414BD20003E73C /* Main.storyboard */,
 			);
@@ -400,14 +403,6 @@
 				0DFC5D222641BBCF0071BB87 /* Sort.swift */,
 			);
 			path = Enums;
-			sourceTree = "<group>";
-		};
-		0DFC5CAD26416AD10071BB87 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				0DFC5CAE26416AEF0071BB87 /* AvatarButton.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		0DFC5CB3264173470071BB87 /* Views */ = {
@@ -750,6 +745,7 @@
 				0DFC5CE526419A4A0071BB87 /* LocationService.swift in Sources */,
 				0DFC5C8126415BFD0071BB87 /* UIView+Curved.swift in Sources */,
 				0DFC5C8B26415F180071BB87 /* UINavigationBar+Style.swift in Sources */,
+				0DD667B52643C8DB00491FC3 /* UITableViewCell+Identifier.swift in Sources */,
 				0DFC5D332641CF6E0071BB87 /* DCategoryViewPresenter.swift in Sources */,
 				0DFC5CA3264160870071BB87 /* DashboardViewController.swift in Sources */,
 				0DFC5D6E2641E3380071BB87 /* DetailsViewController.swift in Sources */,
@@ -940,7 +936,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tandocalvinjohn.testest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tandocalvinjohn.yelpie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

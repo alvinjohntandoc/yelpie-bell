@@ -12,9 +12,6 @@ class DetailsViewController: UIViewController {
     
     enum Constants {
         static let reviews = "Reviews"
-        static let basicIdentifier = "BasicDetailsTableViewCell"
-        static let titleValueIdentifier = "TitleValueTableViewCell"
-        static let reviewIdentifier = "ReviewTableViewCell"
     }
     
     //MARK: - Injectable properties
@@ -56,11 +53,11 @@ class DetailsViewController: UIViewController {
     private func loadData() {
         coverImageView.kf.setImage(with: URL(string: business.imageURL),
                                    options:  [.transition(.fade(1.0))])
-            
+        
         // lets display the previous data
         // generate initial items
         presenter.generateSections(business)
-
+        
         // lets get the complete business details
         presenter.getFullDetails(business)
     }
@@ -115,20 +112,36 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate {
         
         switch item {
         case .basic(let business):
-            let cell: BasicDetailsTableViewCell = tableView.dequeueReusableCell(withIdentifier: Constants.basicIdentifier) as! BasicDetailsTableViewCell
+            guard let cell: BasicDetailsTableViewCell = tableView
+                    .dequeueReusableCell(withIdentifier: BasicDetailsTableViewCell.reuseIdentifier)
+                    as? BasicDetailsTableViewCell else {
+                
+                preconditionFailure("Can't dequeue cell")
+            }
             
             cell.bind(business)
             
             return cell
         case .titleAndValue(let title, let value):
-            let cell: TitleValueTableViewCell = tableView.dequeueReusableCell(withIdentifier: Constants.titleValueIdentifier) as! TitleValueTableViewCell
+            guard let cell: TitleValueTableViewCell = tableView
+                    .dequeueReusableCell(withIdentifier: TitleValueTableViewCell.reuseIdentifier)
+                    as? TitleValueTableViewCell else {
+                
+                preconditionFailure("Can't dequeue cell")
+            }
             
             cell.bind(title, value: value)
             
             return cell
         case .review(let review):
-            let cell: ReviewTableViewCell = tableView.dequeueReusableCell(withIdentifier: Constants.reviewIdentifier) as! ReviewTableViewCell
+            guard let cell: ReviewTableViewCell = tableView
+                    .dequeueReusableCell(withIdentifier: ReviewTableViewCell.reuseIdentifier)
+                    as? ReviewTableViewCell else {
+                preconditionFailure("Can't dequeue cell")
+            }
+            
             cell.bind(review)
+            
             return cell
         }
     }
