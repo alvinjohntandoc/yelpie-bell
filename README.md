@@ -25,4 +25,8 @@
 
 ## Installation
 
-Clone this repo and open the Yelpie.xcworkspace. Run pod install if necessary.
+1) Clone repo by running this on your terminal `git clone https://github.com/alvinjohntandoc/yelpie-bell.git`
+1) Install cocoapods. https://cocoapods.org/
+2) Go to the root directory and run pod install
+3) Open (double click) Yelpie.xcworkspace
+4) Build and run the app on any iOS simulator (iPhoneX up is recommended)
