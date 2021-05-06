@@ -1,5 +1,7 @@
 # Yelfie
 
+<a href="url"><img src="https://github.com/alvinjohntandoc/yelpie-bell/blob/master/mygif.gif" align="left" height="560" ></a>
+
 ## Introduction
 
 > This app display businesses near your location. 
